@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Wave Echo Cave SFX</title>
+
+<style>
+.hidden {
+    display: none;
+}
+</style>
+
+</head>
+<body>
+
+<audio id="sound" controls preload="auto">
+<source src="wave.m4a">
+</audio>
+
+<br>
+
+<input id="volume" type="range" min="0" max="1" step="0.1" value="0.1">
+
+<br>
+
+<input id="period" type="number" step="10" value="10">
+
+<br>
+
+<input id="autoplay" type="button" value="Start Timed Autoplay">
+<input id="cancel-autoplay" type="button" value="End Timed Autoplay" class="hidden">
+
+<script>
+var timeout = null;
+
+document.getElementById("volume").addEventListener("change", function(){
+    setVolume();
+});
+
+document.getElementById("autoplay").addEventListener("click", function(){
+    document.getElementById('autoplay').className= 'hidden';
+    document.getElementById('cancel-autoplay').className = '';
+    playAndWait();
+});
+
+document.getElementById("cancel-autoplay").addEventListener("click", function(){
+    document.getElementById('autoplay').className = '';
+    document.getElementById('cancel-autoplay').className = 'hidden';
+    clearTimeout(timeout);
+});
+
+playAndWait = function() {
+    playSound();
+    var wait = document.getElementById("period").value*1000;
+    timeout = setTimeout(playAndWait, wait);
+};
+
+playSound = function() {
+    var volume = document.getElementById("volume").value;
+    var sound = document.getElementById("sound");
+    sound.play();
+};
+
+setVolume = function() {
+    var volume = document.getElementById("volume").value;
+    var sound = document.getElementById("sound");
+    sound.volume = volume;
+};
+</script>
+
+</body>
+</html>
