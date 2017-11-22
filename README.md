@@ -13,12 +13,13 @@ I use it to heighten the audio experience for my players
 without having to remember to push a button
 every couple of minutes.
 
-This project contains an edit of
+This project contains an excerpt of
 "[Waves on a quiet New Zealand beach][sound]"
 by [RTB45][soundauthor],
 graciously made available under a
-Creative Commons Attribution license.
+[Creative Commons Attribution license][cclicense].
 
 [lmop]: http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_starterset
 [sound]: http://freesound.org/people/RTB45/sounds/148461/
 [soundauthor]: https://freesound.org/people/RTB45/
+[cclicense]: https://creativecommons.org/licenses/by/3.0/
